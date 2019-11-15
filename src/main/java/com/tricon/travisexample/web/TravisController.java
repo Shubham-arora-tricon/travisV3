@@ -10,6 +10,6 @@ public class TravisController {
     @GetMapping("/get")
     @ResponseBody
     public String getExample(){
-        return "Hello World with Travis";
+        return "Hello World with Travis v1";
     }
 }
