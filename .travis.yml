@@ -2,12 +2,17 @@ language: java
 
 jdk: oraclejdk8
 
+services:
+  - docker
+
 dist: trusty
+
 install:
   - mvn clean install -DskipTests
 
 script:
-  - mvn test
+#  - mvn test
+  - docker-compose up
 
 cache:
   directories:
