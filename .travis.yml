@@ -2,11 +2,10 @@ language: java
 
 jdk: oraclejdk8
 
-install: mvn install
-
+dist: trusty
 script:
-  - mvn build
+  - mvn clean install -DskipTests
 
-cache:
-  directories:
-    - $HOME/.m2
+#cache:
+#  directories:
+#    - $HOME/.m2
