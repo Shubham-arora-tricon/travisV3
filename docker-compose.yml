@@ -2,7 +2,7 @@ version: "3"
 services:
   app:
     build: .
-    image: shubhamarora97/travis-demo:latest
+    image: test-image:latest
     container_name: hello-world
     ports:
       - "8765:8765"

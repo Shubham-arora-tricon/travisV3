@@ -8,13 +8,13 @@ services:
 dist: trusty
 
 before_install:
-  - docker build -t testImage:0.1 .
+  - docker-compose build
 
 install:
   - mvn clean install -DskipTests
 
 script:
-  - docker run -p 8765:8765 testImage
+  - docker-compose up
 #  - docker-compose build
 #  - docker tag shubhamarora97/travis-demo shubhamarora97/travis-demo:1.0
 #  - docker push shubhamarora97/travis-demo:1.0
