@@ -7,13 +7,11 @@ services:
 
 dist: trusty
 
-before_install:
-  - docker-compose build
-
 install:
   - mvn clean install -DskipTests
 
 script:
+  - docker-compose build
   - docker-compose up
 #  - docker-compose build
 #  - docker tag shubhamarora97/travis-demo shubhamarora97/travis-demo:1.0
