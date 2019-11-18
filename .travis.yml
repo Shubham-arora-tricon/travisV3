@@ -5,15 +5,15 @@ jdk: oraclejdk8
 services:
   - docker
 
-#env:
-#  - DOCKER_USERNAME=shubhamarora97
-#  - DOCKER_PASSWORD=Shubhi123~
+env:
+  - DOCKER_USERNAME=shubhamarora97
+  - DOCKER_PASSWORD=Shubhi123~
 
 dist: trusty
 
 before_install:
-  - echo "docker login "$DOCKER_USERNAME $DOCKER_PASSWORD""
-  -
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  - docker build -t v1
 install:
   - mvn clean install -DskipTests
 
