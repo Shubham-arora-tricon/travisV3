@@ -14,7 +14,7 @@ install:
   - mvn clean install -DskipTests
 
 script:
-  - docker run -p "8765:8765" testImage
+  - docker run -p 8765:8765 testImage
 #  - docker-compose build
 #  - docker tag shubhamarora97/travis-demo shubhamarora97/travis-demo:1.0
 #  - docker push shubhamarora97/travis-demo:1.0
