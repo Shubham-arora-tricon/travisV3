@@ -5,14 +5,23 @@ jdk: oraclejdk8
 services:
   - docker
 
+env:
+  - DOCKER_USERNAME=shubhamarora97
+  - DOCKER_PASSWORD=Shubhi123~
+
 dist: trusty
 
+before_install:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 install:
   - mvn clean install -DskipTests
 
 script:
-#  - mvn test
-  - docker-compose up
+  - mvn test
+#  - docker-compose build
+#  - docker tag shubhamarora97/travis-demo shubhamarora97/travis-demo:1.0
+#  - docker push shubhamarora97/travis-demo:1.0
+#  - docker pull shubhamarora97/travis-demo:1.0
 
 cache:
   directories:
@@ -23,3 +32,4 @@ deploy:
   api_key:
     secure: 4a378af3-5aca-4765-a4e2-969d3059685e
   app: demo-app-97
+
